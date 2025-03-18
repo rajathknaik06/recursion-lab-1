@@ -1,0 +1,37 @@
+"""John, an aspiring computer scientist, is developing a program to calculate Fibonacci numbers for a mathematical tool. 
+
+
+
+The goal is to create a program that takes an input integer 'n' and computes the n-th Fibonacci number using Recursion.
+
+Input format :
+The input consists of an integer 'n' representing the position in the Fibonacci sequence to calculate.
+
+Output format :
+The output should display any one of the following:
+
+If the input 'n' is valid, the program should return the n-th Fibonacci number as a string.
+
+If the input 'n' is invalid (negative), the program should return "Invalid Input".
+
+ """
+
+def recursive_fibonacci(n):
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return recursive_fibonacci(n - 1) + recursive_fibonacci(n - 2)
+
+def calculate_fibonacci(n):
+    if n < 0:
+        return "Invalid Input"
+    else:
+        result = recursive_fibonacci(n)
+        return f"{result}"
+
+if __name__ == "__main__":
+    n = int(input())
+    result = calculate_fibonacci(n)
+    print(result)
